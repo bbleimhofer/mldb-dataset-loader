@@ -8,7 +8,7 @@ def request_handler(mldb, remaining, verb, resource, rest_params, payload,
     if verb == "POST" and remaining == "/loadcsv":
         payload = json.loads(payload)
         reader = csv.DictReader(open(urllib.urlretrieve(payload["url"])[0]))
-        dataset = mldb.create_dataset(dict(id=str(payload["name"]), type="mutable"))
+        dataset = mldb.create_dataset(dict(id=str(payload["name"]), type="beh_mutable"))
         for i, row in enumerate(reader):
             values = []
             row_name = i
