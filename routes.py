@@ -20,4 +20,3 @@ if rp.verb == "POST" and rp.remaining == "/loadcsv":
 else:
     raise Exception("404")
 
-mldb.plugin.set_request_handler(request_handler)
